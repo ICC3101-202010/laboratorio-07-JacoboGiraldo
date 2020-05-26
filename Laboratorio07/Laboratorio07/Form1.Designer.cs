@@ -33,7 +33,7 @@
             this.PropResul = new System.Windows.Forms.Button();
             this.AnsBtn = new System.Windows.Forms.Button();
             this.HistorialBtn = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.Sep_Decimal = new System.Windows.Forms.Button();
             this.Num0 = new System.Windows.Forms.Button();
             this.PropRest = new System.Windows.Forms.Button();
             this.PropSum = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.tableLayoutPanel2.Controls.Add(this.PropResul, 4, 3);
             this.tableLayoutPanel2.Controls.Add(this.AnsBtn, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.HistorialBtn, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button17, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.Sep_Decimal, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.Num0, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.PropRest, 4, 2);
             this.tableLayoutPanel2.Controls.Add(this.PropSum, 3, 2);
@@ -149,18 +149,19 @@
             this.HistorialBtn.Text = "Historial";
             this.HistorialBtn.UseVisualStyleBackColor = false;
             // 
-            // button17
+            // Sep_Decimal
             // 
-            this.button17.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.button17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button17.Location = new System.Drawing.Point(79, 267);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(70, 85);
-            this.button17.TabIndex = 16;
-            this.button17.Text = ".";
-            this.button17.UseVisualStyleBackColor = false;
+            this.Sep_Decimal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Sep_Decimal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sep_Decimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.Sep_Decimal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Sep_Decimal.Location = new System.Drawing.Point(79, 267);
+            this.Sep_Decimal.Name = "Sep_Decimal";
+            this.Sep_Decimal.Size = new System.Drawing.Size(70, 85);
+            this.Sep_Decimal.TabIndex = 16;
+            this.Sep_Decimal.Text = ",";
+            this.Sep_Decimal.UseVisualStyleBackColor = false;
+            this.Sep_Decimal.Click += new System.EventHandler(this.Sep_Decimal_Click);
             // 
             // Num0
             // 
@@ -418,7 +419,7 @@
         private System.Windows.Forms.Button PropResul;
         private System.Windows.Forms.Button AnsBtn;
         private System.Windows.Forms.Button HistorialBtn;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button Sep_Decimal;
         private System.Windows.Forms.Button Num0;
         private System.Windows.Forms.Button PropRest;
         private System.Windows.Forms.Button PropSum;

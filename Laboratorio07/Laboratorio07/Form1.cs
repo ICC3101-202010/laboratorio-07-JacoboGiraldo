@@ -32,7 +32,8 @@ namespace Laboratorio07
 
         private void AnsBtn_Click(object sender, EventArgs e)
         {
-
+            int Ultimo = Ans.Count();
+            ActualTxt.Text += Ans[Ultimo - 1];
         }
 
         private void Num1_Click(object Numero, EventArgs e)
@@ -103,50 +104,98 @@ namespace Laboratorio07
         {
             ActualTxt.Text += (division as Button).Text;
         }
-
+        List<string> Ans = new List<string>();
+        List<string> Historial = new List<string>();
         private void PropResul_Click(object sender, EventArgs e)
         {
             List<double> PreResultados = new List<double>();
             if (ActualTxt.Text.Contains("+"))
             {
                 double ResultadoSum = 0;
-                PreResultados = ActualTxt.Text.Split('+').Select(double.Parse).ToList();
-                for (int cont = 0; cont < PreResultados.Count();cont++)
+                try
                 {
-                    ResultadoSum += PreResultados[cont];
+                    PreResultados = ActualTxt.Text.Split('+').Select(double.Parse).ToList();
+                    for (int cont = 0; cont < PreResultados.Count(); cont++)
+                    {
+                        ResultadoSum += PreResultados[cont];
+                    }
+                    ActualTxt.Text = ResultadoSum.ToString();
+                    Ans.Add(ResultadoSum.ToString());
                 }
-                ActualTxt.Text = ResultadoSum.ToString();
+                catch(FormatException)
+                {
+                    ActualTxt.Text = "Syntax ERROR";
+                }
+                
             }
             if (ActualTxt.Text.Contains("-"))
             {
-                PreResultados = ActualTxt.Text.Split('-').Select(double.Parse).ToList();
-                double ResultadoRest = PreResultados[0];
-                for (int cont = 1; cont < PreResultados.Count(); cont++)
+                try
                 {
-                    ResultadoRest -= PreResultados[cont];
+                    PreResultados = ActualTxt.Text.Split('-').Select(double.Parse).ToList();
+                    double ResultadoRest = PreResultados[0];
+                    for (int cont = 1; cont < PreResultados.Count(); cont++)
+                    {
+                        ResultadoRest -= PreResultados[cont];
+                    }
+                    ActualTxt.Text = ResultadoRest.ToString();
+                    Ans.Add(ResultadoRest.ToString());
                 }
-                ActualTxt.Text = ResultadoRest.ToString();
+                catch(FormatException)
+                {
+                    ActualTxt.Text = "Syntax ERROR";
+                }
             }
             if (ActualTxt.Text.Contains("x"))
             {
-                PreResultados = ActualTxt.Text.Split('x').Select(double.Parse).ToList();
-                double ResultadoMult = PreResultados[0];
-                for (int cont = 1; cont < PreResultados.Count(); cont++)
+                try
                 {
-                    ResultadoMult *= PreResultados[cont];
+                    PreResultados = ActualTxt.Text.Split('x').Select(double.Parse).ToList();
+                    double ResultadoMult = PreResultados[0];
+                    for (int cont = 1; cont < PreResultados.Count(); cont++)
+                    {
+                        ResultadoMult *= PreResultados[cont];
+                    }
+                    ActualTxt.Text = ResultadoMult.ToString();
+                    Ans.Add(ResultadoMult.ToString());
                 }
-                ActualTxt.Text = ResultadoMult.ToString();
+                catch(FormatException)
+                {
+                    ActualTxt.Text = "Syntax ERROR";
+                }
+
+
             }
             if (ActualTxt.Text.Contains("÷"))
             {
-                PreResultados = ActualTxt.Text.Split('÷').Select(double.Parse).ToList();
-                double ResultadoDiv = PreResultados[0];
-                for (int cont = 1; cont < PreResultados.Count(); cont++)
+                try
                 {
-                    ResultadoDiv /= PreResultados[cont];
+                    PreResultados = ActualTxt.Text.Split('÷').Select(double.Parse).ToList();
+                    double ResultadoDiv = PreResultados[0];
+                    for (int cont = 1; cont < PreResultados.Count(); cont++)
+                    {
+                        ResultadoDiv /= PreResultados[cont];
+                    }
+                    if (ResultadoDiv.ToString() == "∞")
+                    {
+                        ActualTxt.Text = "Math ERROR";
+                    }
+                    else
+                    {
+                        ActualTxt.Text = ResultadoDiv.ToString();
+                        Ans.Add(ResultadoDiv.ToString());
+                    }
                 }
-                ActualTxt.Text = ResultadoDiv.ToString();
+                catch (FormatException)
+                {
+                    ActualTxt.Text = "Syntax ERROR";
+                }
             }
+        }
+
+        private void Sep_Decimal_Click(object punto, EventArgs e)
+        {
+            ActualTxt.Text += (punto as Button).Text;
         }
     }
 }
