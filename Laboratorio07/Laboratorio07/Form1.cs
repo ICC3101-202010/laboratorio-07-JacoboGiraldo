@@ -119,6 +119,7 @@ namespace Laboratorio07
                     {
                         ResultadoSum += PreResultados[cont];
                     }
+                    Historial.Add(ActualTxt.Text + "=" + ResultadoSum.ToString());
                     ActualTxt.Text = ResultadoSum.ToString();
                     Ans.Add(ResultadoSum.ToString());
                 }
@@ -138,6 +139,7 @@ namespace Laboratorio07
                     {
                         ResultadoRest -= PreResultados[cont];
                     }
+                    Historial.Add(ActualTxt.Text + "=" + ResultadoRest.ToString());
                     ActualTxt.Text = ResultadoRest.ToString();
                     Ans.Add(ResultadoRest.ToString());
                 }
@@ -156,6 +158,7 @@ namespace Laboratorio07
                     {
                         ResultadoMult *= PreResultados[cont];
                     }
+                    Historial.Add(ActualTxt.Text + "=" + ResultadoMult.ToString());
                     ActualTxt.Text = ResultadoMult.ToString();
                     Ans.Add(ResultadoMult.ToString());
                 }
@@ -182,6 +185,7 @@ namespace Laboratorio07
                     }
                     else
                     {
+                        Historial.Add(ActualTxt.Text + "=" + ResultadoDiv.ToString());
                         ActualTxt.Text = ResultadoDiv.ToString();
                         Ans.Add(ResultadoDiv.ToString());
                     }
@@ -196,6 +200,29 @@ namespace Laboratorio07
         private void Sep_Decimal_Click(object punto, EventArgs e)
         {
             ActualTxt.Text += (punto as Button).Text;
+        }
+
+        private void ActualTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HistorialBtn_Click(object sender, EventArgs e)
+        {
+            if (ActualTxt.Text.Contains("="))
+            {
+                ActualTxt.Text = "";
+            }
+            else
+            {
+                string Historiales = "";
+                foreach (string SavedResult in Historial)
+                {
+                    Historiales += "\n" + SavedResult + " \\ ";
+                }
+                ActualTxt.Text = Historiales;
+            }
+           
         }
     }
 }

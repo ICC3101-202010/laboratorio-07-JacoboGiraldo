@@ -148,6 +148,7 @@
             this.HistorialBtn.TabIndex = 17;
             this.HistorialBtn.Text = "Historial";
             this.HistorialBtn.UseVisualStyleBackColor = false;
+            this.HistorialBtn.Click += new System.EventHandler(this.HistorialBtn_Click);
             // 
             // Sep_Decimal
             // 
@@ -160,6 +161,7 @@
             this.Sep_Decimal.Size = new System.Drawing.Size(70, 85);
             this.Sep_Decimal.TabIndex = 16;
             this.Sep_Decimal.Text = ",";
+            this.Sep_Decimal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Sep_Decimal.UseVisualStyleBackColor = false;
             this.Sep_Decimal.Click += new System.EventHandler(this.Sep_Decimal_Click);
             // 
@@ -389,13 +391,17 @@
             // 
             // ActualTxt
             // 
+            this.ActualTxt.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ActualTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ActualTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ActualTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
             this.ActualTxt.Location = new System.Drawing.Point(3, 3);
             this.ActualTxt.Multiline = true;
             this.ActualTxt.Name = "ActualTxt";
             this.ActualTxt.ReadOnly = true;
             this.ActualTxt.Size = new System.Drawing.Size(381, 83);
             this.ActualTxt.TabIndex = 1;
+            this.ActualTxt.TextChanged += new System.EventHandler(this.ActualTxt_TextChanged);
             // 
             // Calculadora
             // 
