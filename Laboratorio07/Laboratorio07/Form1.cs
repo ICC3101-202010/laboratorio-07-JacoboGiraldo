@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Laboratorio07
 {
-    public partial class Form1 : Form
+    public partial class Calculadora : Form
     {
-        public Form1()
+        public Calculadora()
         {
             InitializeComponent();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
