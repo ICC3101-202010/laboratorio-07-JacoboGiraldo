@@ -32,7 +32,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.PropResul = new System.Windows.Forms.Button();
             this.AnsBtn = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.HistorialBtn = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.Num0 = new System.Windows.Forms.Button();
             this.PropRest = new System.Windows.Forms.Button();
@@ -80,7 +80,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Controls.Add(this.PropResul, 4, 3);
             this.tableLayoutPanel2.Controls.Add(this.AnsBtn, 3, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button18, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.HistorialBtn, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.button17, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.Num0, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.PropRest, 4, 2);
@@ -136,17 +136,18 @@
             this.AnsBtn.UseVisualStyleBackColor = false;
             this.AnsBtn.Click += new System.EventHandler(this.AnsBtn_Click);
             // 
-            // button18
+            // HistorialBtn
             // 
-            this.button18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.button18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button18.Location = new System.Drawing.Point(155, 267);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(70, 85);
-            this.button18.TabIndex = 17;
-            this.button18.UseVisualStyleBackColor = false;
+            this.HistorialBtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.HistorialBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HistorialBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.HistorialBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.HistorialBtn.Location = new System.Drawing.Point(155, 267);
+            this.HistorialBtn.Name = "HistorialBtn";
+            this.HistorialBtn.Size = new System.Drawing.Size(70, 85);
+            this.HistorialBtn.TabIndex = 17;
+            this.HistorialBtn.Text = "Historial";
+            this.HistorialBtn.UseVisualStyleBackColor = false;
             // 
             // button17
             // 
@@ -416,7 +417,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button PropResul;
         private System.Windows.Forms.Button AnsBtn;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button HistorialBtn;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button Num0;
         private System.Windows.Forms.Button PropRest;

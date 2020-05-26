@@ -106,7 +106,47 @@ namespace Laboratorio07
 
         private void PropResul_Click(object sender, EventArgs e)
         {
-            
+            List<double> PreResultados = new List<double>();
+            if (ActualTxt.Text.Contains("+"))
+            {
+                double ResultadoSum = 0;
+                PreResultados = ActualTxt.Text.Split('+').Select(double.Parse).ToList();
+                for (int cont = 0; cont < PreResultados.Count();cont++)
+                {
+                    ResultadoSum += PreResultados[cont];
+                }
+                ActualTxt.Text = ResultadoSum.ToString();
+            }
+            if (ActualTxt.Text.Contains("-"))
+            {
+                PreResultados = ActualTxt.Text.Split('-').Select(double.Parse).ToList();
+                double ResultadoRest = PreResultados[0];
+                for (int cont = 1; cont < PreResultados.Count(); cont++)
+                {
+                    ResultadoRest -= PreResultados[cont];
+                }
+                ActualTxt.Text = ResultadoRest.ToString();
+            }
+            if (ActualTxt.Text.Contains("x"))
+            {
+                PreResultados = ActualTxt.Text.Split('x').Select(double.Parse).ToList();
+                double ResultadoMult = PreResultados[0];
+                for (int cont = 1; cont < PreResultados.Count(); cont++)
+                {
+                    ResultadoMult *= PreResultados[cont];
+                }
+                ActualTxt.Text = ResultadoMult.ToString();
+            }
+            if (ActualTxt.Text.Contains("÷"))
+            {
+                PreResultados = ActualTxt.Text.Split('÷').Select(double.Parse).ToList();
+                double ResultadoDiv = PreResultados[0];
+                for (int cont = 1; cont < PreResultados.Count(); cont++)
+                {
+                    ResultadoDiv /= PreResultados[cont];
+                }
+                ActualTxt.Text = ResultadoDiv.ToString();
+            }
         }
     }
 }
